@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Configuration
+
+CLOUD_ETH="eth1" # Standard for Rackspace Cloud
+
+# Do not edit below
+
+NODE=`dd if=/dev/urandom count=1 2> /dev/null | md5sum | head -n 2 | tail -n 1 | cut -c-26`
+NODE_NAME="node-${NODE}"
+IP=`ifconfig ${CLOUD_ETH} | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}'`
+
+echo "BOOTSTRAP: I am ${NODE_NAME}"
+echo "HOSTNAME=\"${NODE_NAME}\"" > /etc/conf.d/hostname
+echo "${IP} ${NODE_NAME}" >> /etc/hosts
+/etc/init.d/hostname restart
+echo `hostname -f`
+
+rm -f /etc/chef/client.pem
+chef-client
