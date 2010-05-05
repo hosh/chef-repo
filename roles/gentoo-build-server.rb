@@ -1,12 +1,7 @@
-name "stemcell"
-description "Base role applied to all nodes."
+name "gentoo-build-server"
+description "All Your Bases Are Belong To Us"
 # List of recipes and roles to apply. Requires Chef 0.8, earlier versions use 'recipes()'.
-run_list(%w(
-  recipe[rackspace::hosts] 
-  recipe[gentoo::exclude_categories] 
-  recipe[gentoo::cron_emerge_sync]
-  recipe[gentoo::chef_overlay]
-))
+run_list(%w(recipe[gentoo::mirrorselect]))
 
 # Attributes applied if the node doesn't have it set already.
 #default_attributes()
