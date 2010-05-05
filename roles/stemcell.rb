@@ -4,6 +4,7 @@ description "Base role applied to all nodes."
 run_list(%w(
   recipe[rackspace::hosts] 
   recipe[gentoo::exclude_categories] 
+  recipe[gentoo::portage_rsync]
   recipe[gentoo::cron_emerge_sync]
   recipe[gentoo::chef_overlay]
 ))
@@ -12,4 +13,10 @@ run_list(%w(
 #default_attributes()
 
 # Attributes applied no matter what the node has set already.
-#override_attributes()
+override_attributes(
+  :gentoo => {
+    :rsync => {
+      :uri => 'rsync://chef-server/gentoo-portage'
+    } 
+  }
+)

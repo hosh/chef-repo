@@ -15,6 +15,9 @@ override_attributes(
     :rsyncd => {
        :hosts_allow => '172.16.70.0/24',
        :hosts_deny => '*'
-    }
+    },
+    :rsync => {
+      :uri => '' # Use system default
+    } 
   }
 )
