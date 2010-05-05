@@ -8,4 +8,5 @@ run_list(%w(
 #default_attributes()
 
 # Attributes applied no matter what the node has set already.
-#override_attributes()
+override_attributes(
+)
