@@ -4,6 +4,8 @@ description "All Your Bases Are Belong To Us"
 run_list(%w(
   recipe[gentoo::mirrorselect]
   recipe[gentoo::portage_rsync_server]
+  recipe[nginx]
+  recipe[gentoo::portage_binhost_server]
 ))
 
 # Attributes applied if the node doesn't have it set already.
@@ -18,6 +20,10 @@ override_attributes(
     },
     :rsync => {
       :uri => '' # Use system default
-    } 
+    },
+    :portage_binhost_server => {
+      :listen => '172.16.70.133:80',
+      :server_name => 'chef-server'
+    }
   }
 )
