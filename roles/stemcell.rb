@@ -3,6 +3,8 @@ description "Base role applied to all nodes."
 # List of recipes and roles to apply. Requires Chef 0.8, earlier versions use 'recipes()'.
 run_list(%w(
   recipe[rackspace::hosts] 
+  recipe[gentoo::feature_buildpkg]
+  recipe[gentoo::feature_getbinpkg]
   recipe[gentoo::portage_binhost]
   recipe[gentoo::exclude_categories] 
   recipe[gentoo::portage_rsync]
