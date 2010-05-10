@@ -1,3 +1,6 @@
 [submodule "cookbooks"]
 	path = cookbooks
 	url = git@github.com:hosh/cookbooks.git
+[submodule "gentoo-cookbooks"]
+	path = gentoo-cookbooks
+	url = git@github.com:hosh/gentoo-cookbooks.git
