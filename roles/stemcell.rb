@@ -8,8 +8,9 @@ run_list(%w(
   recipe[gentoo::portage_binhost]
   recipe[gentoo::exclude_categories] 
   recipe[gentoo::portage_rsync]
-  recipe[gentoo::cron_emerge_sync]
   recipe[gentoo::chef_overlay]
+  recipe[gentoo::eix]
+  recipe[gentoo::cron_eix_sync]
 ))
 
 # Attributes applied if the node doesn't have it set already.
