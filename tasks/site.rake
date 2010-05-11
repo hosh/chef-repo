@@ -2,6 +2,7 @@
 SITE_COOKBOOKS = %w(
   gentoo
   nginx
+  monit
 )
 
 desc "Update and push entire stack"

@@ -4,6 +4,7 @@ description "All Your Bases Are Belong To Us"
 run_list(%w(
   recipe[gentoo::mirrorselect]
   recipe[gentoo::portage_rsync_server]
+  recipe[monit]
   recipe[nginx]
   recipe[gentoo::portage_binhost_server]
 ))
@@ -24,6 +25,10 @@ override_attributes(
     :portage_binhost_server => {
       :listen => '172.16.70.133:80',
       :server_name => 'chef-server'
-    }
+    },
+  },
+  :monit => {
+    :mailservers => [ 'chef-server' ],
+    :alert_mail_to => 'root@chef-server'
   }
 )

@@ -6,7 +6,6 @@ run_list(%w(
 
 # Attributes applied if the node doesn't have it set already.
 #default_attributes()
-
 # Attributes applied no matter what the node has set already.
 override_attributes(
 )

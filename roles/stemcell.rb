@@ -5,6 +5,7 @@ run_list(%w(
   recipe[rackspace::hosts] 
   recipe[gentoo::feature_buildpkg]
   recipe[gentoo::feature_getbinpkg]
+  recipe[gentoo::portage_binpkg_respect_use]
   recipe[gentoo::portage_binhost]
   recipe[gentoo::exclude_categories] 
   recipe[gentoo::portage_rsync]
