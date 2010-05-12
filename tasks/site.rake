@@ -1,6 +1,7 @@
 
 SITE_COOKBOOKS = %w(
   gentoo
+  chef
   nginx
   monit
 )
