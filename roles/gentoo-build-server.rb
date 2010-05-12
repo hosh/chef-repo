@@ -23,7 +23,7 @@ override_attributes(
       :uri => '' # Use system default
     },
     :portage_binhost_server => {
-      :listen => '172.16.70.133:80',
+      :ips => [ '172.16.70.133' ],
       :server_name => 'chef-server'
     },
   },
