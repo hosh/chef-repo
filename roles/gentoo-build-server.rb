@@ -3,8 +3,8 @@ description "All Your Bases Are Belong To Us"
 # List of recipes and roles to apply. Requires Chef 0.8, earlier versions use 'recipes()'.
 run_list(%w(
   recipe[gentoo::mirrorselect]
-  recipe[gentoo::portage_rsync_server]
   recipe[monit]
+  recipe[gentoo::portage_rsync_server]
   recipe[nginx]
   recipe[gentoo::portage_binhost_server]
 ))

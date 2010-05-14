@@ -2,6 +2,7 @@
 SITE_COOKBOOKS = %w(
   gentoo
   chef
+  couchdb
   nginx
   monit
 )

@@ -23,6 +23,11 @@ override_attributes(
     :rsync => {
       :uri => 'rsync://chef-server/gentoo-portage'
     },
-    :portage_binhost => 'http://chef-server/'
+    :portage_binhost => 'http://chef-server/',
+    :overlays => {
+      :chef_overlay => {
+        :rev => 'b1ec4647eab99e47ac49f7540c27e89655f82b4d'
+      }
+    }
   }
 )

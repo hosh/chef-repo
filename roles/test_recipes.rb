@@ -8,4 +8,8 @@ run_list(%w(
 #default_attributes()
 # Attributes applied no matter what the node has set already.
 override_attributes(
+  :monit => {
+    :mailservers => [ 'chef-server' ],
+    :alert_mail_to => 'root@chef-server'
+  }
 )
