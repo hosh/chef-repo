@@ -11,5 +11,11 @@ override_attributes(
   :monit => {
     :mailservers => [ 'chef-server' ],
     :alert_mail_to => 'root@chef-server'
+  },
+  :rackspace => {
+    :hosts => {
+      :private_net => '172.*'
+    }, 
+    :private_aliases => %w( test-node template )
   }
 )

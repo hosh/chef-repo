@@ -1,5 +1,6 @@
 
 SITE_COOKBOOKS = %w(
+  rackspace
   gentoo
   chef
   couchdb
