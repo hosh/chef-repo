@@ -29,5 +29,10 @@ override_attributes(
         :rev => 'b1ec4647eab99e47ac49f7540c27e89655f82b4d'
       }
     }
+  },
+  :rackspace => {
+    :hosts => {
+      :private_net => '172.*'
+    } 
   }
 )
