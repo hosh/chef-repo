@@ -17,9 +17,16 @@ run_list(%w(
 # Attributes applied if the node doesn't have it set already.
 #default_attributes()
 
+# To avoid having our VM killed off, turn off pipe and do only one
+# compile at a time.
+
 # Attributes applied no matter what the node has set already.
 override_attributes(
   :gentoo => {
+    :portage => {
+      :CFLAGS => '-march=barcelona -O2',
+      :MAKEOPTS => '-j1'
+    }, 
     :rsync => {
       :uri => 'rsync://chef-server/gentoo-portage'
     },
@@ -30,9 +37,9 @@ override_attributes(
       }
     }
   },
-  :rackspace => {
+  :ghetto_dns => {
     :hosts => {
-      :private_net => '172.*'
+      :private_net => '10.*'
     } 
   }
 )

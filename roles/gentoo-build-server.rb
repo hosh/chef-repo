@@ -16,14 +16,14 @@ run_list(%w(
 override_attributes(
   :gentoo => {
     :rsyncd => {
-       :hosts_allow => '172.16.70.0/24',
+       :hosts_allow => '10.177.0.0/16',
        :hosts_deny => '*'
     },
     :rsync => {
       :uri => '' # Use system default
     },
     :portage_binhost_server => {
-      :ips => [ '172.16.70.133' ],
+      :ips => [ '10.177.133.40' ],
       :server_name => 'chef-server'
     },
   },
