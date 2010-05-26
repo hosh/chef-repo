@@ -15,15 +15,20 @@ run_list(%w(
 # Attributes applied no matter what the node has set already.
 override_attributes(
   :gentoo => {
+    :cron => {
+      :emerge => {
+         :hour => '1'
+      }
+    },
     :rsyncd => {
-       :hosts_allow => '172.16.70.0/24',
+       :hosts_allow => '10.128.1.0/24',
        :hosts_deny => '*'
     },
     :rsync => {
       :uri => '' # Use system default
     },
     :portage_binhost_server => {
-      :ips => [ '172.16.70.133' ],
+      :ips => [ '10.128.1.55' ],
       :server_name => 'chef-server'
     },
   },

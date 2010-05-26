@@ -16,10 +16,13 @@ run_list(%w(
 
 # Attributes applied if the node doesn't have it set already.
 #default_attributes()
-
+# set[:gentoo][:portage][:CFLAGS] = '-march=nocona -O2 -pipe'
 # Attributes applied no matter what the node has set already.
 override_attributes(
   :gentoo => {
+    :portage => {
+      :CFLAGS => '-march=nocona -O2 -pipe'
+    },
     :rsync => {
       :uri => 'rsync://chef-server/gentoo-portage'
     },
@@ -30,9 +33,10 @@ override_attributes(
       }
     }
   },
-  :rackspace => {
+  :ghetto_dns => {
     :hosts => {
-      :private_net => '172.*'
+      :private_net => '10.*',
+      :private_eth => 'eth0'
     } 
   }
 )

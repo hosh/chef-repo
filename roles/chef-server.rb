@@ -17,5 +17,8 @@ override_attributes(
   :monit => {
     :mailservers => [ 'chef-server' ],
     :alert_mail_to => 'root@chef-server'
+  },
+  :ghetoo_dns => {
+    :private_aliases => %w(chef-server)
   }
 )
